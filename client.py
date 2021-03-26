@@ -65,7 +65,8 @@ def listen(incoming_message, error_message):
                 message_length = int(message_header.decode('utf-8'))
                 message = client_socket.recv(message_length).decode('utf-8')
 
-                # Print message
+                # Package the username and message together
+                # for ease of use later on.
                 incoming_message(username, message)
 
         except Exception as e:
